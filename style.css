@@ -1,0 +1,39 @@
+body {
+    padding-top: 0;
+    display: block;
+}
+
+.container {
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    /*display: flex;*/
+    padding-top: 56px;
+    /*padding-top: .5rem 1rem*/
+
+    /*z-index: -1;*/
+}
+
+.containerFull {
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    /*display: flex;*/
+    padding-top: 56px;
+    /*padding-top: .5rem 1rem*/
+
+    /*z-index: -1;*/
+}
+
+#pdfFrame {
+    padding-top: inherit;
+}
+
+.navbar {
+    z-index: 3000;
+    /*height: 50px;*/
+}
+
+.collapse {
+    z-index: 2000;
+}

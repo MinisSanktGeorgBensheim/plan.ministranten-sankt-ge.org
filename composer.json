@@ -1,0 +1,10 @@
+{
+  "require": {
+    "twbs/bootstrap": "4.3.1",
+    "components/jquery": "^3.3",
+    "fortawesome/font-awesome": "^5.8",
+    "ext-mysqli": "*",
+    "ext-json": "*",
+    "ext-curl": "*"
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>getToGottesdienste</title>
+        <script>
+            function getToGottesdienste() {
+                var form = document.getElementsByTagName('form')[0];
+                //form.style.visibility = 'hidden';
+                form.submit();
+            }
+        </script>
+	<link rel="icon" href="http://katholische-kirche-bensheim.de/wp-content/uploads/Logo.jpg" sizes="32x32" />
+	<link rel="icon" href="http://katholische-kirche-bensheim.de/wp-content/uploads/Logo.jpg" sizes="192x192" />
+	<link rel="apple-touch-icon-precomposed" href="http://katholische-kirche-bensheim.de/wp-content/uploads/Logo.jpg" />
+	<meta name="msapplication-TileImage" content="http://katholische-kirche-bensheim.de/wp-content/uploads/Logo.jpg" />
+    </head>
+    <body onload="getToGottesdienste()">
+        <h1>getToGottesdienste.html</h1>
+        <script type="text/javascript">
+            document.write("Sie werden gleich weitergeleitet. Bitte einen kurzen Augenblick Geduld. Ansonsten klicken sie <a href=\"http://katholische-kirche-bensheim.de/gottesdienste-2/\">hier</a> und wählen die Kriterien manuell.");
+        </script>
+        
+        <form method="POST" action="http://katholische-kirche-bensheim.de/gottesdienste-2/">
+            <noscript><p>Da ihr Browser kein JavaScript unterstützt, oder auf dieser Seite nicht erlaubt müssen sie selber auf <b>Anzeigen</b> klicken.</p></noscript>
+            <br>
+            <input type="hidden" name="gesendet" value="1">
+            <input type="checkbox" id="checkbox" checked name="x1" value="1"><span id="stg">St. Georg</span> <br>
+            <input type="checkbox" id="checkbox" name="x2" value="1"><span id="stl">St. Laurentius</span> <br>
+            <input type="checkbox" id="checkbox" name="x3" value="1"><span id="hlk">Heilig Kreuz</span> <br>
+            <input type="checkbox" id="checkbox" name="x4" value="1"><span id="fra">Franziskaner</span> <br>
+            <input type="checkbox" id="checkbox" checked name="x5" value="1"><span id="pv">Pfarreienverbund</span> <br>
+            <br>
+            <input type="submit" value="Anzeigen">
+        </form>
+    </body>
+</html>
+
+
