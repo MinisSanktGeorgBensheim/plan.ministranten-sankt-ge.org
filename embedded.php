@@ -29,9 +29,9 @@ $html = '';
 
 $miniplanList = $miniplan->getMiniplaene(true,mktime(0, 0, 0, date("m")-8, date("d"), date("Y")));
 
-if (count($miniplanList["current"])<=0) echo "<p><b>Es steht zur Zeit leider kein aktueller Miniplan zur Verfügung. Es wird in kürze ein neuer veröffentlicht werden.</b></p>";
+if ($miniplanList["current"] == "" OR count($miniplanList["current"])<=0) echo "<p><b>Es steht zur Zeit leider kein aktueller Miniplan zur Verfügung. Es wird in kürze ein neuer veröffentlicht werden.</b></p>";
 
-foreach ($miniplanList["current"] as $entry) {
+foreach ((array) $miniplanList["current"] as $entry) {
     $html .= "<p><b><a href=\"".($ssl ? "https": "http")."://".$miniplan->getDomain()."/view/".$entry["file"]."\" target=\"_blank\">Miniplan vom ".$entry["from"]. " bis zum ".$entry["to"];
     if ($entry["version"] > 1) $html .= " <span class=\"badge badge-secondary\">v".$entry["version"]."</span>";
     if ($entry["plattform"] == "") $html .= " print";
@@ -58,3 +58,4 @@ $html .= " <a href=\"".($ssl ? "https": "http")."://".$miniplan->getDomain()."/r
 $html .= "<br><br>";
 
 echo $html;
+
