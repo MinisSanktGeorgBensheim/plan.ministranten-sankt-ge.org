@@ -41,7 +41,7 @@ foreach ((array) $miniplanList["current"] as $entry) {
     $html .= "</b></p>\n";
 }
 $html .= "<br>Archiv:\n";
-foreach ($miniplanList["archive"] as $entry) {
+foreach ((array) $miniplanList["archive"] as $entry) {
     $html .= "<p><a href=\"".($ssl ? "https": "http")."://".$miniplan->getDomain()."/view/".$entry["file"]."\" target=\"_blank\">Miniplan vom ".$entry["from"]. " bis zum ".$entry["to"];
     if ($entry["version"] > 1) $html .= " <span class=\"badge badge-secondary\">v".$entry["version"]."</span>";
     if ($entry["plattform"] == "") $html .= " print";

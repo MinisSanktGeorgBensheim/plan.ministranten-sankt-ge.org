@@ -52,7 +52,9 @@ function miniplanListenHTML () {
 //    $html .= "<br><h3>Aktuell</h3>\n";
     $html .= "<br>\n";
 
-    foreach ($miniplanList["current"] as $entry) {
+    if ($miniplanList["current"] == "" OR count($miniplanList["current"])<=0) $html .= "<p><b>Es steht zur Zeit leider kein aktueller Miniplan zur Verfügung. Es wird in kürze ein neuer veröffentlicht werden.</b></p>";
+
+    foreach ((array) $miniplanList["current"] as $entry) {
         $html .= "<p><b><a href=\"/view/".$entry["file"]."/\">Miniplan vom ".$entry["from"]. " bis zum ".$entry["to"];
         if ($entry["version"] > 1) $html .= " <span class=\"badge badge-primary\">v".$entry["version"]."</span>";
         if ($entry["plattform"] == "") $html .= " print";
@@ -61,7 +63,7 @@ function miniplanListenHTML () {
         $html .= "</p>\n";
     }
     $html .= "<br><br><h3>Archiv</h3>\n";
-    foreach ($miniplanList["archive"] as $entry) {
+    foreach ((array) $miniplanList["archive"] as $entry) {
         $html .= "<p><a class=\"text-secondary\" href=\"/view/".$entry["file"]."/\">Miniplan vom ".$entry["from"]. " bis zum ".$entry["to"];
         if ($entry["version"] > 1) $html .= " <span class=\"badge badge-secondary\">v".$entry["version"]."</span>";
         if ($entry["plattform"] == "") $html .= " print";
